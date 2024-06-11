@@ -91,6 +91,7 @@ function draw() {
   // mewarnai apple
   ctx.fillStyle = grd;
   ctx.fillRect(appleX * tileSize, appleY * tileSize, tileSize, tileSize);
+
   //set snake trail
   snakeTrail.push({ x: snakeX, y: snakeY });
   while (snakeTrail.length > tailSize) {
@@ -101,28 +102,28 @@ function draw() {
 // input
 function keyDownEvent(e) {
   switch (e.keyCode) {
-    case 37: // left arrow key
+    case 65: // left arrow key
       if (nextX !== 1 || snakeTrail.length === 0) {
         // Check if the snake is not moving right or if it's the first move
         nextX = -1;
         nextY = 0;
       }
       break;
-    case 38: // up arrow key
+    case 87: // up arrow key
       if (nextY !== 1 || snakeTrail.length === 0) {
         // Check if the snake is not moving down or if it's the first move
         nextX = 0;
         nextY = -1;
       }
       break;
-    case 39: // right arrow key
+    case 68: // right arrow key
       if (nextX !== -1 || snakeTrail.length === 0) {
         // Check if the snake is not moving left or if it's the first move
         nextX = 1;
         nextY = 0;
       }
       break;
-    case 40: // down arrow key
+    case 83: // down arrow key
       if (nextY !== -1 || snakeTrail.length === 0) {
         // Check if the snake is not moving up or if it's the first move
         nextX = 0;
